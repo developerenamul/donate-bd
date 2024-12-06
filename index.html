@@ -15,7 +15,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header></header>
+    <header class="bg-pink-200 py-6">
+      <div
+        class="space-y-3 w-11/12 mx-auto flex flex-col items-center md:flex-row justify-between sticky"
+      >
+        <div>
+          <button class="btn bg-green-600" id="blog">Blog</button>
+        </div>
+        <div class="flex items-center gap-1">
+          <div>
+            <img src="./assets/logo.png" alt="logo" />
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold">Donate Bangladesh</h2>
+          </div>
+        </div>
+        <div class="flex gap-1 items-center">
+          <div>
+            <img src="./assets/coin.png" alt="coin" />
+          </div>
+          <div>
+            <span id="total-balance" class="font-bold">5500</span>
+            <span>BDT</span>
+          </div>
+        </div>
+      </div>
+    </header>
     <main></main>
     <footer></footer>
     <!-- main js files -->
