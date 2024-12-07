@@ -21,7 +21,12 @@
           class="space-y-3 flex flex-col items-center md:flex-row justify-around bg-pink-200 py-6"
         >
           <div>
-            <button class="btn bg-green-600" id="blog">Blog</button>
+            <button
+              class="btn btn-outline rounded focus:bg-slate-800 font-bold text-white bg-green-600"
+              id="blog"
+            >
+              Blog
+            </button>
           </div>
           <div class="flex items-center gap-1">
             <div>
@@ -43,12 +48,14 @@
         </div>
         <div class="btns flex justify-center gap-3 md:pt-10 bg-pink-200 pb-4">
           <button
-            class="visited:bg-red-500 bg-green-400 p-3 rounded hover:bg-green-600 font-bold"
+            class="btn btn-outline rounded focus:bg-slate-800 font-bold text-white bg-green-600"
+            id="handle-donation"
           >
             Donation
           </button>
           <button
-            class="visited:bg-gray-500 bg-green-400 p-3 rounded hover:bg-green-600 font-bold"
+            class="btn btn-outline rounded focus:bg-slate-800 font-bold text-white bg-green-600"
+            id="handle-history"
           >
             History
           </button>
@@ -57,7 +64,7 @@
     </header>
     <main class="relative top-72 md:top-52">
       <div class="w-11/12 mx-auto">
-        <div class="cards p-7 flex flex-col gap-5">
+        <div id="cards-container" class="cards p-7 flex flex-col gap-5 hidden">
           <!-- card1 -->
           <div
             class="card lg:card-side bg-base-100 shadow-xl flex items-center"
@@ -72,7 +79,7 @@
                 <img src="./assets/coin.png" alt="coin" />
                 <span id="noakhali-collection">0</span> <span>BDT</span>
               </div>
-              <h2 class="card-title">
+              <h2 class="card-title" id="noakhali-title">
                 Donate for Flood at Noakhali, Bangladesh
               </h2>
               <p>
@@ -88,8 +95,12 @@
                   type="text"
                   placeholder="Enter Donation Amount"
                   class="input input-bordered input-info w-full max-w-xs"
+                  id="noakhali-field"
                 />
-                <button class="btn bg-green-400 hover:bg-green-600">
+                <button
+                  class="btn btn-outline rounded focus:bg-slate-800 font-bold text-white bg-green-600"
+                  id="donate-noakhali"
+                >
                   Donate Now
                 </button>
               </div>
@@ -109,7 +120,7 @@
                 <img src="./assets/coin.png" alt="coin" />
                 <span id="feni-collection">0</span> <span>BDT</span>
               </div>
-              <h2 class="card-title">
+              <h2 class="card-title" id="feni-title">
                 Donate for Flood Relief in Feni,Bangladesh
               </h2>
               <p>
@@ -127,11 +138,11 @@
                   type="text"
                   placeholder="Enter Donation Amount"
                   class="input input-bordered input-info w-full max-w-xs"
-                  id="feni-amount"
+                  id="feni-field"
                 />
                 <button
-                  class="btn bg-green-400 hover:bg-green-600"
-                  id="feni-handle"
+                  class="btn btn-outline rounded focus:bg-slate-800 font-bold text-white bg-green-600"
+                  id="donate-feni"
                 >
                   Donate Now
                 </button>
@@ -156,7 +167,9 @@
                 <img src="./assets/coin.png" alt="coin" />
                 <span id="quota-collection">0</span> <span>BDT</span>
               </div>
-              <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
+              <h2 class="card-title" id="quota-title">
+                Aid for Injured in the Quota Movement
+              </h2>
               <p>
                 The recent Quota movement has resulted in numerous injuries and
                 significant hardship for many individuals. Your support is
@@ -173,11 +186,11 @@
                   type="text"
                   placeholder="Enter Donation Amount"
                   class="input input-bordered input-info w-full max-w-xs"
-                  id="quota-amount"
+                  id="quota-field"
                 />
                 <button
-                  class="btn bg-green-400 hover:bg-green-600"
-                  id="quota-handler"
+                  class="btn btn-outline rounded focus:bg-slate-800 font-bold text-white bg-green-600"
+                  id="donate-quota"
                 >
                   Donate Now
                 </button>
@@ -185,9 +198,33 @@
             </div>
           </div>
         </div>
+
+        <!-- history section -->
+        <section id="history-container" class="hidden">
+          <div id="history-container"></div>
+        </section>
+        <!-- modal  -->
+        <div id="modal">
+          <!-- Open the modal using ID.showModal() method -->
+
+          <dialog id="my_modal_1" class="modal">
+            <div class="modal-box flex flex-col items-center">
+              <h3 class="text-lg font-bold text-2xl">Congrates!</h3>
+              <img src="./assets/coin.png" alt="coin" />
+              <p class="py-4">You have Donated For HumanKind</p>
+              <h2 class="font-bold">Successfully</h2>
+
+              <div class="modal-action">
+                <form method="dialog">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+        </div>
       </div>
     </main>
-
     <!-- main js files -->
     <script src="utilities.js"></script>
     <script src="app.js"></script>
