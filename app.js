@@ -39,3 +39,12 @@ quotaButton.addEventListener("click", () => {
 blogButton.addEventListener("click", () => {
   window.location = "blog.html";
 });
+
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("bg-slate-800"));
+
+    button.classList.add("bg-slate-800");
+  });
+});

@@ -43,7 +43,9 @@ const donateAndUpdateValue = (inputField, innerTextField, title) => {
   document.getElementById("total-balance").innerText =
     accountBal - totalDonation;
 
-  historyUpdate(totalDonation, title);
+  if (totalDonation > 0) {
+    historyUpdate(totalDonation, title);
+  }
 };
 
 function historyUpdate(money, title) {
